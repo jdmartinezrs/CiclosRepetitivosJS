@@ -83,22 +83,22 @@ for (let estudiante = 1; estudiante <= 5; estudiante++) {
 }
 
 /*
-Ejercicio 5 – Tienda de productos
-Crea un programa que: simule la venta de productos. El usuario podrá registrar la compra
-de varios artículos hasta que decida no comprar más. Se debe calcular el total de la
-compra y aplicar un descuento del 10% si el valor supera los $100.000.
-Ejercicio 6 – Juego del adivinador
 
-Crea un programa que: genere un número aleatorio entre 1 y 20. El usuario intentará
-adivinarlo y el ciclo repetirá los intentos hasta que lo logre. Cada vez que falle, el
-programa debe indicar si el número buscado es mayor o menor que el ingresado.
-Ejercicio 7 – Contador de pares e impares
-Crea un programa que: permita al usuario ingresar 10 números. Al final, muestra cuántos
-fueron pares y cuántos impares.
+
+
+
+
 Ejercicio 8 – Control de acceso
 Crea un programa que: solicite un usuario y contraseña. El programa debe permitir hasta
 3 intentos; si el usuario falla en todos, mostrar un mensaje de “Acceso denegado”. Si
 acierta, mostrar “Bienvenido”.*/
+
+/*
+Ejercicio 5 – Tienda de productos
+Crea un programa que: simule la venta de productos. El usuario podrá registrar la compra
+de varios artículos hasta que decida no comprar más. Se debe calcular el total de la
+compra y aplicar un descuento del 10% si el valor supera los $100.000.
+Ejercicio 6 – Juego del adivinador/*/
 
 let totalCompra = 0
 let decisiondecision
@@ -119,3 +119,27 @@ totalCompra += precioProducto
     }
 
 
+    /*Ejercicio 6 – Juego del adivinador
+    Crea un programa que: genere un número aleatorio entre 1 y 20. El usuario intentará
+adivinarlo y el ciclo repetirá los intentos hasta que lo logre. Cada vez que falle, el
+programa debe indicar si el número buscado es mayor o menor que el ingresado.
+*/
+
+let numeroSecreto = Math.floor(Math.random() * 20) + 1;
+let intento;
+
+while (intento !== numeroSecreto) {
+    intento = parseInt(prompt("Adivina el número entre 1 y 20"));
+
+    if (intento < numeroSecreto) {
+        console.log("El número buscado es mayor");
+    } else if (intento > numeroSecreto) {
+        console.log("El número buscado es menor");
+    } else {
+        console.log("¡Felicidades! Adivinaste el número.");
+    }
+}
+
+/*Ejercicio 7 – Contador de pares e impares
+Crea un programa que: permita al usuario ingresar 10 números. Al final, muestra cuántos
+fueron pares y cuántos impares.*/
