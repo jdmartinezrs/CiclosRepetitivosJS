@@ -81,3 +81,105 @@ for (let estudiante = 1; estudiante <= 5; estudiante++) {
         console.log("Estudiante " + estudiante + ": Reprobado con " + promedio.toFixed(1));
     }
 }
+
+/*
+
+
+/*
+Ejercicio 5 – Tienda de productos
+Crea un programa que: simule la venta de productos. El usuario podrá registrar la compra
+de varios artículos hasta que decida no comprar más. Se debe calcular el total de la
+compra y aplicar un descuento del 10% si el valor supera los $100.000.
+Ejercicio 6 – Juego del adivinador/*/
+
+let totalCompra = 0
+let decisiondecision
+let  porcentajeDescuento= totalCompra * 0.10
+while(decisiondecision != 2){
+   decisiondecision  = parseInt(prompt("Ingrese #1 para registrar un producto comprado \n Ingrese #2 para salir"))
+    if(decisiondecision == 1){
+        let nombreProducto = prompt("Ingrese el nombre del producto")
+let precioProducto = parseInt(prompt("Ingrese el precio del producto"))
+totalCompra += precioProducto
+    }
+}
+   console.log("Total de la compra " , totalCompra)
+    if(totalCompra> 100000){
+        porcentajeDescuento = totalCompra * 0.10
+        totalCompra -= porcentajeDescuento
+        console.log("El valor supera los $100.000, por ende obtiendes un decuento del 10%, valor total con descuento equivale a : ",totalCompra)
+    }
+
+
+    /*Ejercicio 6 – Juego del adivinador
+    Crea un programa que: genere un número aleatorio entre 1 y 20. El usuario intentará
+adivinarlo y el ciclo repetirá los intentos hasta que lo logre. Cada vez que falle, el
+programa debe indicar si el número buscado es mayor o menor que el ingresado.
+*/
+
+let numeroSecreto = Math.floor(Math.random() * 20) + 1;
+let intento;
+
+while (intento !== numeroSecreto) {
+    intento = parseInt(prompt("Adivina el número entre 1 y 20"));
+
+    if (intento < numeroSecreto) {
+        console.log("El número buscado es mayor");
+    } else if (intento > numeroSecreto) {
+        console.log("El número buscado es menor");
+    } else {
+        console.log("¡Felicidades! Adivinaste el número.");
+    }
+}
+
+/*Ejercicio 7 – Contador de pares e impares
+Crea un programa que: permita al usuario ingresar 10 números. Al final, muestra cuántos
+fueron pares y cuántos impares.*/
+
+let cantidadPares = 0;
+let cantidadImpares = 0;
+
+for (let i = 1; i <= 10; i++) {
+    let numero = parseInt(prompt(`Ingrese el número ${i}:`));
+
+    if (numero % 2 === 0) {
+        cantidadPares++;
+    } else {
+        cantidadImpares++;
+    }
+}
+
+console.log("Cantidad de números pares:", cantidadPares);
+console.log("Cantidad de números impares:", cantidadImpares);
+
+
+/*Ejercicio 8 – Control de acceso
+Crea un programa que: solicite un usuario y contraseña. El programa debe permitir hasta
+3 intentos; si el usuario falla en todos, mostrar un mensaje de “Acceso denegado”. Si
+acierta, mostrar “Bienvenido”.*/
+
+const usuarioCorrecto = "admin";
+const contrasenaCorrecta = "1234";
+
+let intentos = 0;
+let accesoConcedido = false;
+
+while (intentos < 3 && !accesoConcedido) {
+    let usuario = prompt("Ingrese el usuario:");
+    let contrasena = prompt("Ingrese la contraseña:");
+
+    if (usuario === usuarioCorrecto && contrasena === contrasenaCorrecta) {
+        accesoConcedido = true;
+        console.log("Bienvenido");
+    } else {
+        intentos++;
+        console.log("Usuario o contraseña incorrectos");
+    }
+}
+
+if (!accesoConcedido) {
+    console.log("Acceso denegado");
+}
+
+
+
