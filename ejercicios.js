@@ -81,3 +81,5 @@ for (let estudiante = 1; estudiante <= 5; estudiante++) {
         console.log("Estudiante " + estudiante + ": Reprobado con " + promedio.toFixed(1));
     }
 }
+
+
