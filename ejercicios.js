@@ -85,14 +85,6 @@ for (let estudiante = 1; estudiante <= 5; estudiante++) {
 /*
 
 
-
-
-
-Ejercicio 8 – Control de acceso
-Crea un programa que: solicite un usuario y contraseña. El programa debe permitir hasta
-3 intentos; si el usuario falla en todos, mostrar un mensaje de “Acceso denegado”. Si
-acierta, mostrar “Bienvenido”.*/
-
 /*
 Ejercicio 5 – Tienda de productos
 Crea un programa que: simule la venta de productos. El usuario podrá registrar la compra
@@ -159,4 +151,35 @@ for (let i = 1; i <= 10; i++) {
 
 console.log("Cantidad de números pares:", cantidadPares);
 console.log("Cantidad de números impares:", cantidadImpares);
+
+
+/*Ejercicio 8 – Control de acceso
+Crea un programa que: solicite un usuario y contraseña. El programa debe permitir hasta
+3 intentos; si el usuario falla en todos, mostrar un mensaje de “Acceso denegado”. Si
+acierta, mostrar “Bienvenido”.*/
+
+const usuarioCorrecto = "admin";
+const contrasenaCorrecta = "1234";
+
+let intentos = 0;
+let accesoConcedido = false;
+
+while (intentos < 3 && !accesoConcedido) {
+    let usuario = prompt("Ingrese el usuario:");
+    let contrasena = prompt("Ingrese la contraseña:");
+
+    if (usuario === usuarioCorrecto && contrasena === contrasenaCorrecta) {
+        accesoConcedido = true;
+        console.log("Bienvenido");
+    } else {
+        intentos++;
+        console.log("Usuario o contraseña incorrectos");
+    }
+}
+
+if (!accesoConcedido) {
+    console.log("Acceso denegado");
+}
+
+
 
