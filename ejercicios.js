@@ -143,3 +143,20 @@ while (intento !== numeroSecreto) {
 /*Ejercicio 7 – Contador de pares e impares
 Crea un programa que: permita al usuario ingresar 10 números. Al final, muestra cuántos
 fueron pares y cuántos impares.*/
+
+let cantidadPares = 0;
+let cantidadImpares = 0;
+
+for (let i = 1; i <= 10; i++) {
+    let numero = parseInt(prompt(`Ingrese el número ${i}:`));
+
+    if (numero % 2 === 0) {
+        cantidadPares++;
+    } else {
+        cantidadImpares++;
+    }
+}
+
+console.log("Cantidad de números pares:", cantidadPares);
+console.log("Cantidad de números impares:", cantidadImpares);
+
